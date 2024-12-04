@@ -47,6 +47,9 @@ export const LoginDetail = styled.div`
   width: 100%;
   padding: 10px 30px 10px 0;
   text-align: left;
+  @media screen and (max-width: 767px) {
+    padding: 0px;
+  }
 `;
 
 export const LoginFormContainer = styled.div`
