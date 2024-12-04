@@ -90,6 +90,9 @@ export const Image = styled.img`
   display: flex;
   justify-content: flex-start;
   margin: 0;
+  @media screen and (max-width: 767px) {
+    width: 140px;
+	}
 `;
 
 export const H1 = styled.h1`
