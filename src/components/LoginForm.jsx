@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
+import { ButtonWrapper, Direction, Error, ForgetWrapper, Form, Input, InputBox, Label, Register } from '../style/login/style';
+import Button from '@mui/material/Button';
+
 
 export default function LoginForm() {
   const [username, setUsername] = useState('');
@@ -28,13 +31,13 @@ export default function LoginForm() {
 
     // Simulate login success
     setError('');
-    alert('Login successful!');
+    // alert('Login successful!');
 
     // Optionally handle "Keep me logged in" logic
     if (keepLoggedIn) {
       console.log('User opted to stay logged in');
     }
-    
+
     // Reset form fields
     setUsername('');
     setPassword('');
@@ -45,10 +48,10 @@ export default function LoginForm() {
 
   return (
     <>
-      <form onSubmit={handleSubmit} method="post">
-        <div className="input-wrapper">
-          <label>User Name</label>
-          <input
+      <Form onSubmit={handleSubmit} method="post">
+        <InputBox>
+          <Label>User Name</Label>
+          <Input
             type="text"
             id="name"
             name="name"
@@ -56,10 +59,10 @@ export default function LoginForm() {
             onChange={(e) => setUsername(e.target.value)}
             placeholder="Enter your name"
           />
-        </div>
-        <div className="input-wrapper">
-          <label>Password</label>
-          <input
+        </InputBox>
+        <InputBox>
+          <Label>Password</Label>
+          <Input
             type="password"
             id="password"
             name="password"
@@ -67,7 +70,7 @@ export default function LoginForm() {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Enter your password"
           />
-        </div>
+        </InputBox>
         <div className="login-session">
           <div className="keep-login checkbox">
             {/* 
@@ -81,16 +84,24 @@ export default function LoginForm() {
             <label htmlFor="checkbox1">Keep me logged in</label>
             */}
           </div>
-          <div className="forgot-password">
-            <Link to="/forgot-password">Forgot Password</Link>
-          </div>
+          <ForgetWrapper>
+            {/* <Direction to="/forgot-password">Forgot Password</Direction> */}
+          </ForgetWrapper>
         </div>
-        <button type="submit" id="rippleButton">Login</button>
-        {error && <div className="error input-error">{error}</div>}
-        <div className="register">
+        <Button type="submit" id="rippleButton" sx={{
+          backgroundColor: '#6f2036',
+          color: '#fff',
+          '&:hover': {
+            boxShadow: 'rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px',
+            background: '#980a25',
+          },
+        }} style={{width:'100%', marginBottom:'10px'}}>Login</Button>
+
+        {error && <Error className="error">{error}</Error>}
+        {/* <Register>
           <p>Don't have an account? <Link to="/register">Register</Link></p>
-        </div>
-      </form>
+        </Register> */}
+      </Form>
     </>
   );
 }

@@ -1,14 +1,14 @@
 import React from 'react';
-import '../style/temprature/style.css';
 import { LineChart } from '@mui/x-charts/LineChart';
 import { dataset } from '../api/temprature';
+import { Container, H2, P } from '../style/temprature/style';
 
 export default function Temperature() {
     return (
         <>
-            <section className='temperature-wrapper'>
-                <h2>Temperature</h2>
-                <p>The honey bee temperature graph typically tracks the temperature variations within a beehive, helping beekeepers monitor the optimal conditions for hive health.</p>
+            <Container>
+                <H2>Temperature</H2>
+                <P>The honey bee temperature graph typically tracks the temperature variations within a beehive, helping beekeepers monitor the optimal conditions for hive health.</P>
                 <LineChart
                     dataset={dataset}
                     xAxis={[{ dataKey: 'x' }]}
@@ -17,7 +17,7 @@ export default function Temperature() {
                     margin={{ left: 30, right: 30, top: 30, bottom: 30 }}
                     grid={{ vertical: true, horizontal: true }}
                 />
-            </section>
+            </Container>
         </>
     )
 }

@@ -8,7 +8,7 @@
 		width: 100%;
 		margin: 0 auto;
 		gap: 15px;
-		
+
 
 		.box {
 			display: flex;
@@ -17,7 +17,7 @@
 			border: 1px solid rgba(0, 0, 0, 0.125);
 			// max-width: 331px;
 			width: 100%;
-			padding: 15px;
+			// padding: 15px;
 			border-radius: 8px;
 			box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
@@ -59,9 +59,11 @@
 					display: flex;
 					justify-content: space-between;
 					padding: 0px 0px 7px 0px;
-					&:last-child{
+
+					&:last-child {
 						padding-bottom: 0px;
 					}
+
 					span {
 						font-size: 16px;
 						font-weight: 500;
@@ -79,28 +81,31 @@
 	}
 
 	body {
-		padding: 15px;
+		padding: 0px;
+		box-sizing: border-box;
 	}
 }
 
 @media screen and (min-width: 1000px) {
 	.box-wrapper {
-		
+
 		width: 100%;
-	
+
 	}
 }
+
 @media screen and (min-width: 767px) {
 	.box-wrapper {
 		flex-direction: row;
 		width: 58%;
 		align-items: flex-start;
 		gap: 15px;
-		.box{
-		// max-width: 331px;
-		width: 48%;
+
+		.box {
+			// max-width: 331px;
+			width: 48%;
 		}
-		
+
 	}
 
 	body {

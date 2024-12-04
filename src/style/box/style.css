@@ -15,7 +15,6 @@
     background-color: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.125);
     width: 100%;
-    padding: 15px;
     border-radius: 8px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   }
@@ -64,7 +63,8 @@
     color: #535f6b;
   }
   body {
-    padding: 15px;
+    padding: 0px;
+    box-sizing: border-box;
   }
 }
 @media screen and (min-width: 1000px) {
