@@ -47,9 +47,6 @@ export const LoginDetail = styled.div`
   width: 100%;
   padding: 10px 30px 10px 0;
   text-align: left;
-  @media screen and (max-width: 767px) {
-    padding: 0px;
-  }
 `;
 
 export const LoginFormContainer = styled.div`
@@ -93,9 +90,6 @@ export const Image = styled.img`
   display: flex;
   justify-content: flex-start;
   margin: 0;
-  @media screen and (max-width: 767px) {
-    width: 140px;
-	}
 `;
 
 export const H1 = styled.h1`

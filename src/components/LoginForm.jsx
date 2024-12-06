@@ -43,7 +43,7 @@ export default function LoginForm() {
     setPassword('');
 
     // Redirect to the HomePage after successful login
-    navigate('/home');
+    navigate('/dashboard');
   };
 
   return (

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 // Styled components for styling the login page
 export const Container = styled.section`
-       max-width: 1240px;
+       /* max-width: 1240px; */
         width: 100%;
         padding: 15px;
         border: 1px solid rgba(0, 0, 0, 0.125);
