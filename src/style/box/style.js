@@ -15,8 +15,10 @@ export const Boxs = styled.div`
         display: flex;
         flex-direction: column;
         /* background-color: #ffffff; */
+        
+        background: ${({ theme }) => (theme === 'light' ? '#fff' : '#0b0e14')};
         color: ${({ theme }) => (theme === 'light' ? '#000' : '#fff')};
-        border: 1px solid ${({ theme }) => (theme === 'light' ? '#80808021' : '#808080')};
+        border: 1px solid ${({ theme }) => (theme === 'light' ? '#80808021' : '#333b4d99')};
         /* border: 1px solid ${({ theme }) => (theme === 'light' ? 'rgba(0, 0, 0, 0.125)' : 'hsl(220, 20%, 65%)')}; */
         width: 48%;
         border-radius: 8px;

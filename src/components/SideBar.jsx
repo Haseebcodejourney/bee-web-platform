@@ -36,27 +36,27 @@ const SideBar = ({ onMenuClick }) => {
           <Toggle onClick={toggleSidebar}  theme={theme}><MenuIcon /></Toggle>
         </SideBarHeader>
 
-        <SidebarWrapper onClick={() => onMenuClick('hivePage')} style={{ padding: isCollapsed ? '5px 4px' : '15px' }}  theme={theme}>
+        <SidebarWrapper onClick={() => onMenuClick('hivePage')} style={{ padding: isCollapsed ? '15px 15px' : '15px' }}  theme={theme}>
           <SidebarItem><HomeIcon sx={{ fontSize: 15 }} /><Paper style={{ display: isCollapsed ? 'none' : 'flex' }}  theme={theme}>Dashboard</Paper></SidebarItem><ArrowForwardIosIcon sx={{ fontSize: 15 }} style={{ display: isCollapsed ? 'none' : 'flex' }} />
         </SidebarWrapper>
 
-        <SidebarWrapper onClick={() => onMenuClick('hivePage')} style={{ padding: isCollapsed ? '5px 4px' : '15px' }}  theme={theme}>
+        <SidebarWrapper onClick={() => onMenuClick('hivePage')} style={{ padding: isCollapsed ? '15px 15px' : '15px' }}  theme={theme}>
           <SidebarItem><HiveIcon sx={{ fontSize: 15 }} /><Paper style={{ display: isCollapsed ? 'none' : 'flex' }}  theme={theme}>Hive</Paper></SidebarItem><ArrowForwardIosIcon sx={{ fontSize: 15 }} style={{ display: isCollapsed ? 'none' : 'flex' }} />
         </SidebarWrapper>
 
-        <SidebarWrapper onClick={() => onMenuClick('bee')} style={{ padding: isCollapsed ? '5px 4px' : '15px' }}  theme={theme}>
+        <SidebarWrapper onClick={() => onMenuClick('bee')} style={{ padding: isCollapsed ? '15px 15px' : '15px' }}  theme={theme}>
           <SidebarItem><EmojiNatureIcon sx={{ fontSize: 15 }} /><Paper style={{ display: isCollapsed ? 'none' : 'flex' }}  theme={theme}>Bee</Paper></SidebarItem><ArrowForwardIosIcon sx={{ fontSize: 15 }} style={{ display: isCollapsed ? 'none' : 'flex' }} />
         </SidebarWrapper>
 
-        <SidebarWrapper style={{ padding: isCollapsed ? '5px 4px' : '15px' }}  theme={theme}>
+        <SidebarWrapper style={{ padding: isCollapsed ? '15px 15px' : '15px' }}  theme={theme}>
           <SidebarItem><CoronavirusIcon sx={{ fontSize: 15 }} /><Paper style={{ display: isCollapsed ? 'none' : 'flex' }}  theme={theme}>Diseases</Paper></SidebarItem><ArrowForwardIosIcon sx={{ fontSize: 15 }} style={{ display: isCollapsed ? 'none' : 'flex' }} />
         </SidebarWrapper>
 
-        <SidebarWrapper style={{ padding: isCollapsed ? '5px 4px' : '15px' }}  theme={theme}>
+        <SidebarWrapper style={{ padding: isCollapsed ? '15px 15px' : '15px' }}  theme={theme}>
           <SidebarItem><ScaleIcon sx={{ fontSize: 15 }} /><Paper style={{ display: isCollapsed ? 'none' : 'flex' }}  theme={theme}>Weight</Paper></SidebarItem><ArrowForwardIosIcon sx={{ fontSize: 15 }} style={{ display: isCollapsed ? 'none' : 'flex' }} />
         </SidebarWrapper>
 
-        <SidebarWrapper onClick={() => onMenuClick('live')} style={{ padding: isCollapsed ? '5px 4px' : '15px' }}  theme={theme}>
+        <SidebarWrapper onClick={() => onMenuClick('live')} style={{ padding: isCollapsed ? '15px 15px' : '15px' }}  theme={theme}>
           <SidebarItem><SlideshowIcon sx={{ fontSize: 15 }} /><Paper style={{ display: isCollapsed ? 'none' : 'flex' }}  theme={theme}>Live</Paper></SidebarItem><ArrowForwardIosIcon sx={{ fontSize: 15 }} style={{ display: isCollapsed ? 'none' : 'flex' }} />
         </SidebarWrapper>
 

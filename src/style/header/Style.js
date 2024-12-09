@@ -2,7 +2,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
- background: ${({ theme }) => (theme === 'light' ? '#fff' : '#333')};  /* Adjust background color */
+ background: ${({ theme }) => (theme === 'light' ? '#fff' : '#0c1017')};  /* Adjust background color */
   padding: 0 30px;
   min-height: 73px;
   position: fixed;
@@ -16,10 +16,12 @@ export const Container = styled.div`
   transition: width 0.3s ease;
   margin-right: 0;
   margin-left: auto;
-  color: ${({ theme }) => (theme === 'light' ? '#000' : '#fff')}; /* Change text color */
+  color: ${({ theme }) => (theme === 'light' ? '#6f2036' : '#fff')}; /* Change text color */
     /* Conditional shadow based on the theme */
-    box-shadow: ${({ theme }) => theme === 'light' ? '0px 4px 6px rgba(0, 0, 0, 0.1)' : '0px 4px 6px rgba(255, 255, 255, 0.2)'};
+    /* box-shadow: ${({ theme }) => theme === 'light' ? '0px 4px 6px rgba(0, 0, 0, 0.1)' : '0px 4px 6px rgba(255, 255, 255, 0.2)'}; */
   transition: all 0.3s ease-in-out;
+  border-bottom: 1px solid hsla(210, 14%, 28%, 0.3);
+  
 `;
 
 export const Wrapper = styled.div`
@@ -40,20 +42,34 @@ export const Right = styled.div`
 `;
 
 export const ModeWrapper = styled.div`
-
+    cursor: pointer;
+    width: 33px;
+    height: 33px;
+    color:${({ theme }) => (theme === 'light' ? '#6f2036' : 'none')};
+    background:${({ theme }) => (theme === 'light' ? '#6f2036' : 'none')};
+    padding: 0.5rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:1px solid ${({ theme }) => (theme === 'light' ? '#80808021' : '#80808021')};
+   
 `;
 
 export const NotificationWrapper = styled.div`
     cursor: pointer;
     width: 33px;
     height: 33px;
-    color: #fff !important;
-    background-color: #6f2036 !important;
+    /* color: #fff; */
+    color:${({ theme }) => (theme === 'light' ? '#6f2036' : 'none')};
+    background:${({ theme }) => (theme === 'light' ? '#6f2036' : 'none')};
     padding: 0.5rem;
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
+    border:1px solid ${({ theme }) => (theme === 'light' ? '#80808021' : '#80808021')};
+     
 `;
 
 export const ExpandWrapper = styled.div`
@@ -62,6 +78,7 @@ export const ExpandWrapper = styled.div`
    display: flex;
 align-items: center;
 justify-content: center;
+cursor: pointer;
 
 `;
 
@@ -75,7 +92,10 @@ export const Image = styled.img`
 `;
 
 export const UserWrapper = styled.div`
-color: hsla(220, 20%, 25%, 0.6);
+svg{
+            color: ${({ theme }) => (theme === 'light' ? '#6f2036' : '#fff')};
+            fill: ${({ theme }) => (theme === 'light' ? '#6f2036' : '#fff')};
+        } 
 `;
 
 export const Icon = styled.div`
@@ -89,36 +109,17 @@ export const Title = styled.h2`
 `;
 
 export const ToggleButtonWrapper = styled.div`
- background-color: transparent;
-  border: none;
-  font-size: 24px;
-  color: ${({ theme }) => (theme === 'light' ? '#333' : '#fff')};
-  cursor: pointer;
-  transition: color 0.3s ease;
-    background-color: transparent;
-    border-color: #05bbc9;
-    border-radius: 8px;
-    transition: all 0.3s ease-in-out;
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+
+    svg{
+            color: ${({ theme }) => (theme === 'light' ? '#6f2036' : '#fff')};
+            fill: ${({ theme }) => (theme === 'light' ? '#6f2036' : '#fff')};
+        }
  
 `;
 
 export const Paper = styled.span`
-        width: 33px;
-        height: 33px;
-        border-radius: 4px;
-        border: 1px solid rgba(0, 0, 0, 0.125);
-        /* box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075); */
-        color: #fff;
-        padding: 3px 3px;
-        background: transparent;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        svg{
-            /* color: #6f2036; */
+      svg{
             color: ${({ theme }) => (theme === 'light' ? '#6f2036' : '#fff')};
-            fill: #6f2036;
-            width: 18px;
-        }
+            fill: ${({ theme }) => (theme === 'light' ? '#6f2036' : '#fff')};
+        }   
 `;
