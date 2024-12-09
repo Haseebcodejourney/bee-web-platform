@@ -1,30 +1,38 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
-import HomePage from './pages/MainPage';
-import { ThemeProvider } from 'styled-components';
-import { theme } from './style/theme';
-import GlobalStyles from './style/common/GlobalStyles';
-import HivePage from './pages/HivePage';
-import BeePage from './pages/BeePage';
-import DiseasePage from './pages/DiseasePage';
-import WeightPage from './pages/WeightPage';
-import LivePage from './pages/LivePage';
-import SideBar from './components/SideBar';
 import MainPage from './pages/MainPage';
+import GlobalStyles from './style/common/GlobalStyles';
+import { useState, useEffect } from 'react';
+import { ThemeProvider } from './context/ThemeContext'; // Use the ThemeContext provider
 
 function App() {
+  const [theme, setTheme] = useState('light');
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      setTheme(savedTheme);
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    setTheme(prevTheme => {
+      const newTheme = prevTheme === 'light' ? 'dark' : 'light';
+      localStorage.setItem('theme', newTheme); // Save to localStorage
+      return newTheme;
+    });
+  };
+
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <GlobalStyles />
-        <Router>
-          <Routes>
-            <Route path="/" element={<LoginPage />} />
-            <Route path="/dashboard" element={<MainPage />} />
-          </Routes>
-        </Router>
-      </ThemeProvider>
-    </>
+    <ThemeProvider value={{ theme, toggleTheme }}> {/* Use the context provider here */}
+      <GlobalStyles />
+      <Router>
+        <Routes>
+          <Route path="/" element={<LoginPage />} />
+          <Route path="/dashboard" element={<MainPage />} />
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
 }
 

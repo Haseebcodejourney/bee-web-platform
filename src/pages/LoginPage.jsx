@@ -22,7 +22,7 @@ export default function LoginPage() {
 						</P>
 					</LoginDetail>
 					<LoginFormContainer>
-						<LoginFormHeading>Bee keeping</LoginFormHeading>
+						<LoginFormHeading style={{color:'#6f2036'}}>Bee keeping</LoginFormHeading>
 						<LoginFormText>Login into your pages account</LoginFormText>
 						<LoginForm />
 					</LoginFormContainer>

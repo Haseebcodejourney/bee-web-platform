@@ -1,34 +1,35 @@
+// src/components/Header/Header.js
 import React from 'react';
-import styled from 'styled-components';
-
-// Styled components for the Header
-const HeaderContainer = styled.div`
-  background: #fff;
-  padding: 0 30px;
-  min-height: 73px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: ${({ isCollapsed }) => (isCollapsed ? 'calc(100% - 60px)' : 'calc(100% - 260px)')}; /* Adjust based on collapse state */
-  display: inline-block;
-  z-index: 99;
-  margin: 0;
-  transition: width 0.3s ease; /* Smooth transition for width */
-  margin-right: 0;
-  margin-left: auto;
-`;
-
-const HeaderTitle = styled.h1`
-  margin: 0;
-`;
-
+import { FaSun, FaMoon } from 'react-icons/fa'; // Import sun and moon icons
+import { useTheme } from '../context/ThemeContext'; // Assuming you have ThemeContext setup for managing dark/light mode
+import { Container, ExpandWrapper, Icon, Left, ModeWrapper, NotificationWrapper, Right, Title, UserWrapper, Wrapper, ToggleButtonWrapper, Paper, Figure, Image } from '../style/header/Style'; // Adjust import path to your style file
+import NotificationsIcon from '@mui/icons-material/Notifications';
+import AllOutIcon from '@mui/icons-material/AllOut';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const Header = ({ isCollapsed }) => {
+  const { theme, toggleTheme } = useTheme(); // Using theme and toggleTheme from context
+
   return (
-    <HeaderContainer isCollapsed={isCollapsed}>
-      <HeaderTitle></HeaderTitle>
-    </HeaderContainer>
+    <Container isCollapsed={isCollapsed}  theme={theme}>
+      <Wrapper>
+        <Left>
+          <Title>Bee Keeping</Title>
+        </Left>
+        <Right>
+          <ModeWrapper>
+          <ToggleButtonWrapper theme={theme} onClick={toggleTheme}>
+             <Paper> {theme === 'light' ? <FaMoon /> : <FaSun />}</Paper> {/* Toggle between moon and sun icons */}
+            </ToggleButtonWrapper>
+          </ModeWrapper>
+          <NotificationWrapper>
+            <Icon><NotificationsIcon/></Icon>
+          </NotificationWrapper>
+          <ExpandWrapper><AllOutIcon /></ExpandWrapper>
+          <UserWrapper><AccountCircleIcon style={{ fontSize: '48px', color: '#6f2036' }}/></UserWrapper>
+        </Right>
+      </Wrapper>
+    </Container>
   );
 };
 

@@ -35,12 +35,48 @@ export const LiveWrapper = styled.div`
 `;
 
 export const Text = styled.h2`
-    background: #fff;
+    /* background: #fff; */
+    color: ${({ theme }) => (theme === 'light' ? '#fff' : 'transparent')};
+
     width: 100%;
     padding: 15px 15px;
-    color: #6f2036;
+    /* color: #6f2036; */
+    color: ${({ theme }) => (theme === 'light' ? '#6f2036' : '#fff')};
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow at the bottom */
 `;
 
 
 
+export const ScreenWrapper = styled.div`
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    /* background: #000; */
+    color: ${({ theme }) => (theme === 'light' ? '#000' : 'transparent')};
+`;
+
+export const Image = styled.img`
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   position: absolute;
+   top: 0;
+   left: 0;
+`;
+
+export const Frame = styled.iframe`
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100vw;
+ height: 100vh;
+`;
+
+export const Slider = styled.input.attrs({ type: 'range' })`
+  width: 100%;
+  /* Add additional styles for your slider here */
+`;
+
+export const Button = styled.button`
+
+`;

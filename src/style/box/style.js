@@ -14,12 +14,15 @@ export const Container = styled.section`
 export const Boxs = styled.div`
         display: flex;
         flex-direction: column;
-        background-color: #ffffff;
-        border: 1px solid rgba(0, 0, 0, 0.125);
+        /* background-color: #ffffff; */
+        color: ${({ theme }) => (theme === 'light' ? '#000' : '#fff')};
+        border: 1px solid ${({ theme }) => (theme === 'light' ? '#80808021' : '#808080')};
+        /* border: 1px solid ${({ theme }) => (theme === 'light' ? 'rgba(0, 0, 0, 0.125)' : 'hsl(220, 20%, 65%)')}; */
         width: 48%;
         border-radius: 8px;
         padding: 15px;
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
+        /* box-shadow: ${({ theme }) => (theme === 'light' ? 'rgba(149, 157, 165, 0.2) 0px 8px 24px' : 'transparent')}; */
         @media screen and (max-width: 767px) {
             width: 100%;
             
@@ -27,7 +30,7 @@ export const Boxs = styled.div`
 `;
 
 export const TopSegment = styled.div`
-display: flex;
+        display: flex;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 10px;
@@ -35,7 +38,8 @@ display: flex;
 
 export const Strong = styled.strong`
 font-size: 18px;
-color: #6f2036;
+/* color: #6f2036; */
+color: ${({ theme }) => (theme === 'light' ? '#6f2036' : '#fff')};
 `;
 
 export const Figure = styled.figure`
@@ -64,6 +68,7 @@ display: flex;
 export const Paper = styled.span`
 font-size: 16px;
         font-weight: 500;
-        color: #303030;
+        /* color: #303030; */
+        color: ${({ theme }) => (theme === 'light' ? '#303030' : '#fff')};
 
 `;

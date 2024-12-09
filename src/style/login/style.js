@@ -63,7 +63,8 @@ export const LoginFormHeading = styled.h2`
   font-size: 40px;
   font-weight: 700;
   margin-bottom: 5px;
-  color: #6f2036;
+  /* color: #6f2036; */
+  color: ${({ theme }) => (theme === 'light' ? '#6f2036' : '#fff')};
   text-transform: capitalize;
 
 `;

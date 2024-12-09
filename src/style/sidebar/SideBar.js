@@ -14,8 +14,10 @@ export const SidebarContainer = styled.div`
   padding-left: 18px;
   z-index: 1000;
   height: 100%;
-  background: #ffffff;
-  color: #6f2036;
+  /* background: #ffffff; */
+  background: ${({ theme }) => (theme === 'light' ? '#fff' : 'transparent')};
+  /* color: #6f2036; */
+  color: ${({ theme }) => (theme === 'light' ? '#6f2036' : '#fff')};
   box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
   width: ${({ isCollapsed }) => (isCollapsed ? '60px' : '260px')}; /* Conditional width */
   transition: width 0.3s ease-in-out; /* Smooth transition for width change */
@@ -65,8 +67,10 @@ export const SidebarWrapper = styled.div`
   align-items: center;
   width: 100%;
   &:hover {
-    background-color: #6f2036;
-    color: #fff;
+    /* background-color: #6f2036; */
+    background: ${({ theme }) => (theme === 'light' ? '#6f2036' : 'transparent')};
+    /* color: #fff; */
+    color: ${({ theme }) => (theme === 'light' ? '#fff' : '#fff')};
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adding shadow */
   }
 `;
