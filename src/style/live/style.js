@@ -22,27 +22,32 @@ export const LiveWrapper = styled.div`
   display: flex;
   align-items: flex-start;
   flex-wrap: wrap;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
   width: 100%;
   height: auto;  /* Adjust the height as necessary */
   position: relative;
   border-radius: 8px;  /* Optional: Adds rounded corners */
   overflow: hidden;  /* Ensures content stays inside the container */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for visual effect */
+ /* Box shadow for visual effect */
   max-width: 1240px;
   margin-bottom: 72px;
+  /* 1px solid #3d47514d; */
+  border:1px solid ${({ theme }) => (theme === 'light' ? '#80808021' : '#3d47514d')};
+
   
 `;
 
 export const Text = styled.h2`
     /* background: #fff; */
+    /* background: #0c1017; */
+    background: ${({ theme }) => (theme === 'light' ? '#fff' : '#0c1017')};
     color: ${({ theme }) => (theme === 'light' ? '#fff' : 'transparent')};
 
     width: 100%;
     padding: 15px 15px;
     /* color: #6f2036; */
     color: ${({ theme }) => (theme === 'light' ? '#6f2036' : '#fff')};
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow at the bottom */
+   /* Box shadow at the bottom */
 `;
 
 

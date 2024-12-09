@@ -5,10 +5,11 @@ import SideBar from '../components/SideBar';
 import HivePage from './HivePage';
 import LivePage from './LivePage';
 import Box from '../components/Box';
+import MissingPage from './MissingPage';
 
 const MainPage = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
-  const [selectedComponent, setSelectedComponent] = useState('hive'); // Default selected component
+  const [selectedComponent, setSelectedComponent] = useState('LivePage'); // Default selected component
 
   const toggleSidebar = () => {
     setIsCollapsed(!isCollapsed);
@@ -25,13 +26,13 @@ const MainPage = () => {
       case 'dashboard':
         return <MainPage />;
       case 'hive':
-        return <Box />;
+        return <MissingPage />;
       case 'bee':
-        return <HivePage />;
+        return <MissingPage />;
       case 'disease':
-        return <HivePage />;
+        return <MissingPage />;
       case 'weight':
-        return <HivePage />;
+        return <MissingPage />;
       case 'live':
         return <LivePage />; 
       default:

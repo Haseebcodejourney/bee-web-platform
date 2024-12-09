@@ -12,6 +12,9 @@ export const Container = styled.section`
         background: ${({ theme }) => (theme === 'light' ? '#fff' : 'transparent')};
         color: ${({ theme }) => (theme === 'light' ? '#000' : '#fff')};
         /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
+        &:hover{
+                background: ${({ theme }) => (theme === 'light' ? '#fff' : '#0b0e14')};
+        }
         @media screen and (max-width: 767px) {
             width: 100%;
         }

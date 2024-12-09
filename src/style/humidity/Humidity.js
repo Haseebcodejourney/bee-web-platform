@@ -14,6 +14,11 @@ export const Container = styled.section`
         background: ${({ theme }) => (theme === 'light' ? '#fff' : 'transparent')};
         color: ${({ theme }) => (theme === 'light' ? '#fff' : 'transparent')};
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        transition: transform 0.3s ease;
+        &:hover{
+                background: ${({ theme }) => (theme === 'light' ? '#fff' : '#0b0e14')};
+           
+        }
 `;
 export const H2 = styled.h2`
 font-size: 18px;
