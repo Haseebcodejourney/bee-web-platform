@@ -3,9 +3,13 @@ import { LineChart } from '@mui/x-charts/LineChart';
 import { dataset } from '../api/temprature';
 import { Container, H2, P } from '../style/temprature/style';
 import { useTheme } from '../context/ThemeContext'; // Import useTheme hook
+import styled from 'styled-components';
 
 export default function Temperature() {
     const { theme } = useTheme(); // Get the current theme
+    const StyledLineChart = styled(LineChart)`
+
+`;
     return (
         <>
             <Container theme={theme}>

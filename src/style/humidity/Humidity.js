@@ -15,9 +15,22 @@ export const Container = styled.section`
         color: ${({ theme }) => (theme === 'light' ? '#fff' : 'transparent')};
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
         transition: transform 0.3s ease;
+        line {
+        stroke: ${({ theme }) => (theme === 'light' ? '#fff' : '#ffffff73')};
+        /* stroke: #ffffff73 !important;  */
+        }
+        text{
+                tspan{
+                        color: ${({ theme }) => (theme === 'light' ? '#fff' : '#fff')};
+                        fill: ${({ theme }) => (theme === 'light' ? '#fff' : '#fff')};
+                        /* color: #fff !important;
+                        fill: #fff !important; */
+                }
+        
+        }
         &:hover{
                 background: ${({ theme }) => (theme === 'light' ? '#fff' : '#0b0e14')};
-           
+                transform: scale(1.02);
         }
 `;
 export const H2 = styled.h2`

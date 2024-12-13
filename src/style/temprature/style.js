@@ -11,13 +11,29 @@ export const Container = styled.section`
         /* background: #fff; */
         background: ${({ theme }) => (theme === 'light' ? '#fff' : 'transparent')};
         color: ${({ theme }) => (theme === 'light' ? '#000' : '#fff')};
+        transition: 0.3s ease all;
         /* box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px; */
         &:hover{
                 background: ${({ theme }) => (theme === 'light' ? '#fff' : '#0b0e14')};
+                transform: scale(1.05);
         }
         @media screen and (max-width: 767px) {
             width: 100%;
         }
+     
+line {
+        stroke: ${({ theme }) => (theme === 'light' ? '#fff' : '#ffffff73')};
+        /* stroke: #ffffff73 !important;  */
+    }
+    text{
+        tspan{
+                color: ${({ theme }) => (theme === 'light' ? '#fff' : '#fff')};
+                fill: ${({ theme }) => (theme === 'light' ? '#fff' : '#fff')};
+                /* color: #fff !important;
+                fill: #fff !important; */
+        }
+       
+    }
 `;
 export const H2 = styled.h2`
             font-size: 18px;
@@ -30,5 +46,4 @@ export const P = styled.p`
 margin-bottom: -15px;  
 color: ${({ theme }) => (theme === 'light' ? '#000' : '#fff')}; 
 `;
-
 
