@@ -7,6 +7,7 @@ import HiveIcon from '@mui/icons-material/Hive';
 import CoronavirusIcon from '@mui/icons-material/Coronavirus';
 import ScaleIcon from '@mui/icons-material/Scale';
 import EmojiNatureIcon from '@mui/icons-material/EmojiNature';
+import AcUnitIcon from '@mui/icons-material/AcUnit';
 import Logo from '../assets/images/neu-logo.png';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Figure, Image, SidebarContainer, SideBarHeader, SidebarItem, SidebarWrapper, Toggle, Paper } from '../style/sidebar/SideBar';
@@ -31,7 +32,7 @@ const SideBar = ({ onMenuClick }) => {
       <SidebarContainer style={{ width: isCollapsed ? '60px' : '260px', alignItems: isCollapsed ? 'center' : 'flex-start', gap: isCollapsed ? '15px' : '0' }}  theme={theme}>
         <SideBarHeader  theme={theme}>
           <Figure style={{ display: isCollapsed ? 'none' : 'block' }}>
-            <Image src={Logo} alt='Logo' width={200} height={200} />
+            <Image src="https://profdux.aiiot.center/assets/images/air-logo.png" alt='Logo' width={200} height={200} />
           </Figure>
           <Toggle onClick={toggleSidebar}  theme={theme}><MenuIcon /></Toggle>
         </SideBarHeader>
@@ -58,6 +59,10 @@ const SideBar = ({ onMenuClick }) => {
 
         <SidebarWrapper onClick={() => onMenuClick('live')} style={{ padding: isCollapsed ? '15px 15px' : '15px' }}  theme={theme}>
           <SidebarItem><SlideshowIcon sx={{ fontSize: 15 }} /><Paper style={{ display: isCollapsed ? 'none' : 'flex' }}  theme={theme}>Live</Paper></SidebarItem><ArrowForwardIosIcon sx={{ fontSize: 15 }} style={{ display: isCollapsed ? 'none' : 'flex' }} />
+        </SidebarWrapper>
+
+        <SidebarWrapper onClick={() => onMenuClick('model')} style={{ padding: isCollapsed ? '15px 15px' : '15px' }}  theme={theme}>
+          <SidebarItem><AcUnitIcon  sx={{ fontSize: 15 }} /><Paper style={{ display: isCollapsed ? 'none' : 'flex' }}  theme={theme}>Ai Model</Paper></SidebarItem><ArrowForwardIosIcon sx={{ fontSize: 15 }} style={{ display: isCollapsed ? 'none' : 'flex' }} />
         </SidebarWrapper>
 
       </SidebarContainer>

@@ -40,3 +40,15 @@ button.dark {
   border-color: #fff;
   color: #fff;
 }
+
+
+/* Hide scrollbar for Webkit browsers */
+*::-webkit-scrollbar {
+  display: none; /* Hides the scrollbar */
+}
+
+/* Optional: Ensures scroll still works */
+.box-wrapper {
+  -ms-overflow-style: none;  /* Hides scrollbar in IE/Edge */
+  scrollbar-width: none;     /* Hides scrollbar in Firefox */
+}

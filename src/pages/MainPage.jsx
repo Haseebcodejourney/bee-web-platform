@@ -6,6 +6,7 @@ import HivePage from './HivePage';
 import LivePage from './LivePage';
 import Box from '../components/Box';
 import MissingPage from './MissingPage';
+import AiModel from '../components/AIModel/AiModel';
 
 const MainPage = () => {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -34,7 +35,9 @@ const MainPage = () => {
       case 'weight':
         return <MissingPage />;
       case 'live':
-        return <LivePage />; 
+        return <LivePage />;
+      case 'model':
+        return <AiModel />;  
       default:
         return <HivePage />; 
     }

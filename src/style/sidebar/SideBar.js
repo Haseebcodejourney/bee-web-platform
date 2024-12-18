@@ -49,8 +49,8 @@ export const Image = styled.img`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 80px;
-  height: 80px;
+  width: 180px;
+  height: auto;
 `;
 
 export const Toggle = styled.div`

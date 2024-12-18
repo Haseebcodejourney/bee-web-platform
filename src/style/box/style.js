@@ -5,6 +5,8 @@ export const Container = styled.section`
         width: 58%;
         align-items: flex-start;
         gap: 15px;
+
+        
         @media screen and (max-width: 767px) {
             width: 100%;
             flex-direction: column;
@@ -58,7 +60,8 @@ width: 38px;
 `;
 
 export const List = styled.ul`
-
+    overflow-y: scroll;
+    max-height: 122px;
 `;
 
 export const ListItems = styled.li`

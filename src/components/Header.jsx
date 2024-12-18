@@ -57,8 +57,8 @@ const Header = ({ isCollapsed }) => {
           </ModeWrapper>
           <NotificationWrapper onClick={toggleNotification}>
             <Icon><NotificationsIcon /></Icon>
-            <NotificationWrapperBox>
-              {isNotificationOpen && (  // Only show notifications if open
+            {/* <NotificationWrapperBox>
+              {isNotificationOpen && (
                 <NBox>
                   <NInner>
                     <NTop>
@@ -110,7 +110,7 @@ const Header = ({ isCollapsed }) => {
                   </NInner>
                 </NBox>
               )}
-            </NotificationWrapperBox>
+            </NotificationWrapperBox> */}
           </NotificationWrapper>
           <ExpandWrapper onClick={toggleFullScreen}>
             <AllOutIcon />
