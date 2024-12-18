@@ -1,20 +1,20 @@
 import React, { useState } from 'react';
-import { FaSun, FaMoon } from 'react-icons/fa'; // Import sun and moon icons
-import { useTheme } from '../context/ThemeContext'; // Assuming you have ThemeContext setup for managing dark/light mode
-import { Container, ExpandWrapper, Icon, Left, ModeWrapper, NotificationWrapper, Right, Title, UserWrapper, Wrapper, ToggleButtonWrapper, Paper, Figure, Image } from '../style/header/Style'; // Adjust import path to your style file
+import { useTheme } from '../context/ThemeContext';
+import { Container, ExpandWrapper, Icon, Left, ModeWrapper, NotificationWrapper, Right, Title, UserWrapper, Wrapper, ToggleButtonWrapper, Paper, NotificationWrapperBox, NBox, NInner, NTop, NMiddle, NBottom, NLeft, NRight, MLeft, MRight, MLWrapper, MLFigure, MLImage, MRText, MRPaper } from '../style/header/Style'; // Adjust import path to your style file
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import AllOutIcon from '@mui/icons-material/AllOut';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
+import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 
 const Header = ({ isCollapsed }) => {
-  const { theme, toggleTheme } = useTheme(); // Using theme and toggleTheme from context
+  const { theme, toggleTheme } = useTheme();
   const [isFullScreen, setIsFullScreen] = useState(false);
+  const [isNotificationOpen, setIsNotificationOpen] = useState(false); // State for notification visibility
 
   const toggleFullScreen = () => {
     if (isFullScreen) {
-      // Exit fullscreen if it's already fullscreen
       if (document.exitFullscreen) {
         document.exitFullscreen();
       } else if (document.webkitExitFullscreen) {
@@ -25,8 +25,7 @@ const Header = ({ isCollapsed }) => {
         document.msExitFullscreen();
       }
     } else {
-      // Request fullscreen on the document or a specific element
-      const element = document.documentElement; // You can change this to a specific container element if needed
+      const element = document.documentElement;
       if (element.requestFullscreen) {
         element.requestFullscreen();
       } else if (element.webkitRequestFullscreen) {
@@ -37,7 +36,11 @@ const Header = ({ isCollapsed }) => {
         element.msRequestFullscreen();
       }
     }
-    setIsFullScreen(!isFullScreen); // Toggle full-screen state
+    setIsFullScreen(!isFullScreen);
+  };
+
+  const toggleNotification = () => {
+    setIsNotificationOpen(prevState => !prevState); // Toggle notification visibility
   };
 
   return (
@@ -52,14 +55,68 @@ const Header = ({ isCollapsed }) => {
               {theme === 'light' ? <DarkModeIcon /> : <LightModeIcon />}
             </ToggleButtonWrapper>
           </ModeWrapper>
-          <NotificationWrapper>
+          <NotificationWrapper onClick={toggleNotification}>
             <Icon><NotificationsIcon /></Icon>
+            <NotificationWrapperBox>
+              {isNotificationOpen && (  // Only show notifications if open
+                <NBox>
+                  <NInner>
+                    <NTop>
+                      <NLeft>
+                      <strong>Notifications </strong>
+                      <span>(03)</span>
+                      </NLeft>
+                      <NRight>
+                        <strong>Clear All</strong>
+                      </NRight>
+                    </NTop>
+
+                    <NMiddle>
+                      <MLeft>
+                        <MLWrapper>
+                          <div className='left'>
+                            <ErrorOutlineIcon />
+                          </div>
+                          <div className='right'>
+                            <MRText>A new user added in Daxa </MRText>
+                            <MRPaper> 3 hrs ago </MRPaper>
+                          </div>
+                        </MLWrapper>
+                      </MLeft>
+                      <MRight>
+
+                      </MRight>
+                    </NMiddle>
+
+                    <NMiddle>
+                      <MLeft>
+                        <MLWrapper>
+                          <div className='left'>
+                            <ErrorOutlineIcon />
+                          </div>
+                          <div className='right'>
+                            <MRText>A new user added in Daxa </MRText>
+                            <MRPaper> 3 hrs ago </MRPaper>
+                          </div>
+                        </MLWrapper>
+                      </MLeft>
+                      <MRight>
+
+                      </MRight>
+                    </NMiddle>
+
+
+                    <NBottom></NBottom>
+                  </NInner>
+                </NBox>
+              )}
+            </NotificationWrapperBox>
           </NotificationWrapper>
           <ExpandWrapper onClick={toggleFullScreen}>
             <AllOutIcon />
           </ExpandWrapper>
           <UserWrapper theme={theme}>
-            <AccountCircleIcon style={{ fontSize: '48px'}} />
+            <AccountCircleIcon style={{ fontSize: '48px' }} />
           </UserWrapper>
         </Right>
       </Wrapper>
