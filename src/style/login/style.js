@@ -77,6 +77,19 @@ export const LoginFormText = styled.p`
 
 `;
 
+export const LoginFormFigure = styled.figure`
+  margin: 0px;
+
+`;
+export const LoginFormLogo = styled.img`
+    width: 410px;
+    margin-bottom: 40px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+
+`;
+
 export const Figure = styled.figure`
   margin-bottom: 20px;
 

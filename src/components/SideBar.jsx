@@ -62,7 +62,7 @@ const SideBar = ({ onMenuClick }) => {
         </SidebarWrapper>
 
         <SidebarWrapper onClick={() => onMenuClick('model')} style={{ padding: isCollapsed ? '15px 15px' : '15px' }}  theme={theme}>
-          <SidebarItem><AcUnitIcon  sx={{ fontSize: 15 }} /><Paper style={{ display: isCollapsed ? 'none' : 'flex' }}  theme={theme}>Ai Model</Paper></SidebarItem><ArrowForwardIosIcon sx={{ fontSize: 15 }} style={{ display: isCollapsed ? 'none' : 'flex' }} />
+          <SidebarItem><AcUnitIcon  sx={{ fontSize: 15 }} /><Paper style={{ display: isCollapsed ? 'none' : 'flex' }}  theme={theme}>AI</Paper></SidebarItem><ArrowForwardIosIcon sx={{ fontSize: 15 }} style={{ display: isCollapsed ? 'none' : 'flex' }} />
         </SidebarWrapper>
 
       </SidebarContainer>
