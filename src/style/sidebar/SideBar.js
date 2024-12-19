@@ -66,7 +66,7 @@ export const SidebarWrapper = styled.div`
   margin: 0px;
   padding: 15px 15px;
   line-height: 18px;
-  border-radius: 8px;
+  border-radius: 0px;
   cursor: pointer;
   transition: 0.3s all;
   display: flex;
